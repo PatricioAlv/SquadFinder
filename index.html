@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameSquad Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GameSquad Finder</div>
+            <div class="nav-links">
+                <button id="loginBtn">Iniciar Sesión</button>
+                <button id="registerBtn">Registrarse</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-catalog">
+            <h2>Juegos Disponibles</h2>
+            <div class="games-grid">
+                <div class="game-card" data-game="cs2">
+                    <img src="images/cs2.jpg" alt="CS2">
+                    <h3>CS2</h3>
+                    <button class="find-team-btn">Buscar Equipo</button>
+                </div>
+                <div class="game-card" data-game="fortnite">
+                    <img src="images/fortnite.jpg" alt="Fortnite">
+                    <h3>Fortnite</h3>
+                    <button class="find-team-btn">Buscar Equipo</button>
+                </div>
+                <div class="game-card" data-game="valorant">
+                    <img src="images/valorant.jpg" alt="Valorant">
+                    <h3>Valorant</h3>
+                    <button class="find-team-btn">Buscar Equipo</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gameRooms" class="game-rooms" style="display: none;">
+            <div class="rooms-header">
+                <h2>Salas de <span id="selectedGame"></span></h2>
+                <button id="createRoomBtn" class="primary-button">Crear Sala</button>
+            </div>
+            <div id="roomsList" class="rooms-list">
+                <!-- Las salas se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <h2>Registrarse</h2>
+                <form id="registerForm">
+                    <input type="text" name="username" placeholder="Nombre de usuario" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="createRoomModal" class="modal">
+            <div class="modal-content">
+                <h2>Crear Nueva Sala</h2>
+                <form id="createRoomForm">
+                    <input type="text" name="title" placeholder="Título de la sala" required>
+                    <input type="number" name="playersNeeded" placeholder="Jugadores necesarios" min="1" max="10" required>
+                    <textarea name="description" placeholder="Descripción de la sala" required></textarea>
+                    <button type="submit">Crear Sala</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
